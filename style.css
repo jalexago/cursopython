@@ -5,19 +5,15 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    /*cambio stilo de letra*/
-    font-family: 'roboto','sans-serif';
-    /*quitamos el borde*/
+    font-family: 'roboto', 'sans-serif';
     margin: 0;
 }
-/*cambiamos tamaño letra*/
 h1{font-size: 3.5em;}
 h2{font-size: 2.7em;}
 h3{font-size: 2em;}
 p{font-size: 1.25em;}
-/*modificamos elstilo de las listas quitando los puntos por defecto*/
 ul{list-style: none;}
-li{font-style: 1.25em;}
+li{font-size: 1.25em;}
 button{
     font-size: 1.25em;
     font-weight: bold;
@@ -39,8 +35,6 @@ button:hover{
 header{
     background-color: rgb(245, 245, 245);
 }
-/*hasta aqui los stilos generales*/
-/*barra navegacion*/
 header .logo{
     margin: 0;
     padding: 25px 30px;
@@ -50,7 +44,7 @@ header .logo{
 }
 header .container{
     display: flex;
-    flex-direction:column ;
+    flex-direction: column;
     align-items: center;
 }
 header nav{
@@ -68,7 +62,6 @@ header a{
 header a:hover{
     color: blueviolet;
 }
-/*fin barra navegacion*/
 #hero{
     display: flex;
     align-items: center;
@@ -78,11 +71,10 @@ header a:hover{
     height: 90vh;
     background-image: linear-gradient(
         0deg,
-        rgb(0,0,0,0.5),
-        rgb(0,0,0,0.5)
-    )
-    , url(media/hero.jpg);
-    background-repeat:no-repeat ;
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ), url(media/hero.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
@@ -105,9 +97,8 @@ header a:hover{
 }
 #nuestros-programas p{
     margin: 0;
-    /*hepuesto margin para que no este vacio por error*/
 }
-#nuestros-programas .cursos{
+.cursos{
     background-position: center center;
     background-size: cover;
     padding: 50px 0px;
@@ -117,26 +108,23 @@ header a:hover{
 .cursos:first-child{
     background-image: linear-gradient(
         0deg,
-        rgb(0,0,0,0.6)
-        rgb(0,0,0,0.6)
-    )
-    ,url(media/front-end.jpg);
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
+    ), url(media/front-end.jpg);
 }
 .cursos:nth-child(2){
     background-image: linear-gradient(
         0deg,
-        rgb(0,0,0,0.5)
-        rgb(0,0,0,0.5)
-    )
-    ,url(media/full-stack.jpg);
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ), url(media/full-stack.jpg);
 }
 .cursos:nth-child(3){
     background-image: linear-gradient(
         0deg,
-        rgb(0,0,0,0.5)
-        rgb(0,0,0,0.5)
-    )
-    ,url(media/python.jpg);
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ), url(media/python.jpg);
 }
 #caracteristicas li{
     margin: 16px 0px;
@@ -172,7 +160,7 @@ footer .container{
     justify-content: center;
     align-items: flex-end;
 }
-@media (min-width:850px){
+@media (min-width: 850px){
     header{
         position: fixed;
         width: 100%;
@@ -203,10 +191,10 @@ footer .container{
         justify-content: center;
     }
     #somos-Bejob h2{
-        margin-top: 0px;
+        margin-top: 0;
     }
-    #somos-bejob .img-container{
-        background-image: url(media/somos-Bejob.jpg);
+    #somos-Bejob .img-container{
+        background-image: url("C:\Users\jalex\OneDrive\Escritorio\curso python\media\front-end.jpg");
         background-size: cover;
         background-position: center center;
         height: 500px;
@@ -215,7 +203,6 @@ footer .container{
     #nuestros-programas .programas{
         display: flex;
         justify-content: center;
-
     }
     #nuestros-programas p{
         display: block;
@@ -226,20 +213,19 @@ footer .container{
     }
     #nuestros-programas h3{
         margin-top: 0;
-
     }
     #nuestros-programas .cursos{
         padding: 50px;
     }
-footer .container{
-    justify-content: flex-end;
-}
-#final h2{
-    font-size: 5em;
-}
-#final button{
-    font-size: 2em;
-}
+    footer .container{
+        justify-content: flex-end;
+    }
+    #final h2{
+        font-size: 5em;
+    }
+    #final button{
+        font-size: 2em;
+    }
 }
 @media (min-width: 1200px){
     #caracteristicas{
