@@ -3,7 +3,7 @@ class Libro:
     def __init__(self, titulo, autor, isbn, disponible):
         self.titulo = titulo
         self.autor = autor
-        self.isb = isbn
+        self.isbn = isbn
         self.disponible = True
         #defino la clase biblioteca#
 class Biblioteca:
@@ -98,7 +98,10 @@ def main():
             break
         #si digitalizan una opcion no contemplada se imprime el mensaje#
         else:
-            print("Opcion no valida")           
+            print("Opcion no valida")  
+#condicional para que se ejecute el main#
+if __name__ == "__main__":
+    main()                     
 
                     
                    
