@@ -1,50 +1,104 @@
-# imprimo la bienvenida#
-print("Bienvenido al sistema de gestion de biblioteca")
-#muestro las opciones para el usuario #
-print("1. Agregar libro")
-print("2. Prestar libro")
-print("3. Devolver libro")
-print("4. Mostrar libros")
-print("5. Buscar")
-print("6. Salir")
-#pido al usuario que elija una opcion#
-opcion = int(input("Elige una opción: "))
-# si la opcion es 1#
-if opcion == 1:
-    #pido los datos del libro#
-    # en el titulo digo que es un string#
-    titulo =str(input("Introduce el titulo: "))
-    # en el autor digo que es un string#
-    autor =str(input("Introduce el autor: "))
-    # en el isbn digo que es un string#
-    isbn =str(input("Introduce el ISBN: "))
-    # le pongo atributo a disponible como booleano y valor true #
-    disponible =bool(True) 
-    #abro un diccionario para guardar los datos#
-    libro = {
-        "titulo": titulo,
-        "autor": autor,
-        "isbn": isbn,
-        "disponible": disponible
-    }
-    # actualizo el diccionario de libro con el nuevo libro #
-    libro.update(libro)
-    # imprimo que el libro se ha agregado#
-    print("Libro agregado con Exito")
-    # si la opcion es 2#
-elif opcion == 2:
-    # pido el isbn del libro a prestar#
-    isbn = input("Introduce el ISBN del libro a prestar: ")
-    # busco el libro por el isbn#
-    libro = libro.get(isbn)
-    # si el libro esta disponible#
-    if libro["disponible"] == True:
-        # cambio el valor de disponible a false#
-        libro["disponible"] = False
-        # imprimo que el libro se ha prestado#
-        print("Libro prestado con Exito")
-    else:
-        # si el libro no esta disponible imprimo que no se puede prestar#
-        print("El libro no esta disponible")
-    # si la opcion es 3#
-   
+#defino la clase libro#
+class Libro:
+    def __init__(self, titulo, autor, isbn, disponible):
+        self.titulo = titulo
+        self.autor = autor
+        self.isb = isbn
+        self.disponible = True
+        #defino la clase biblioteca#
+class Biblioteca:
+    def __init__(self):
+        self.libros = []
+        #defino la opcion agregar libro#
+    def agregar_libro(self,):
+        titulo = input("Ingrese el titulo: ")
+        autor = input("Ingrese el autor: ")
+        isbn = input("Ingrese el ISBN: ")
+        #creo un objeto de la clase libro#
+        libro = Libro(titulo, autor, isbn, True)
+        #agrego el libro a la lista de libros#
+        self.libros.append(libro)
+        #defino la opcion prestar libro#
+    def prestar_libro(self):
+        isbn = input("Ingrese el ISBN : ")
+        #busco el libro con el isbn ingresado con el condicional for y if#
+        for libro in self.libros:
+            #si el libro es encontrado y esta disponible se cambia el estado a no disponible#
+            if libro.isbn == isbn:
+                if libro.disponible:
+                    libro.disponible = False
+                    print("Libro prestado con exito")
+                else:
+                    print("Libro no disponible")
+                return
+        #si el libro no es encontrado se imprime un mensaje#        
+        print("Libro no encontrado")
+    def devolver_libro(self):
+        isbn = input("Ingrese el ISBN : ")
+        #busco el libro con el isbn ingresado con el condicional for y if#
+        for libro in self.libros:
+            #si el libro es encontrado se cambia el estado a disponible con el bool true
+            # y envio un mensaje de libro devuelto #
+            if libro.isbn == isbn:
+                if not libro.disponible:
+                    libro.disponible = True
+                    print("Libro devuelto con exito")
+                return
+        #si el isbn no es encontrado se imprime un mensaje#
+        print("Libro no encontrado con ese isbn ")
+    #defino la opcion de mostrar libros#
+    def mostrar_libros(self):
+        #pongo condicional if para ver si la lista esta vacia#
+        if not self.libros:
+            print("No hay libros en la biblioteca")
+        else:
+            #si la lista no esta vacia se imprime los libros#
+            for libro in self.libros:
+                print(f"Titulo: {libro.titulo}, Autor: {libro.autor}, ISBN: {libro.isbn}, Disponible: {libro.disponible}")
+    #defino la opcion buscar#
+    def buscar_libro(self):
+        isbn = input("Ingrese el ISBN : ")
+        #busco el libro con el isbn ingresado con el condicional for y if#
+        for libro in self.libros:
+            #si el libro es encontrado se imprime los datos del libro#
+            if libro.isbn == isbn:
+                print(f"Titulo: {libro.titulo}, Autor: {libro.autor}, ISBN: {libro.isbn}, Disponible: {libro.disponible}")
+                return
+        #si el libro no es encontrado se imprime un mensaje#
+        print("Libro no encontrado")   
+#defino el menu que mostarra las opciones#
+def menu():
+    print("1. Agregar libro")
+    print("2. Prestar libro")
+    print("3. Devolver libro")
+    print("4. Mostrar libros")
+    print("5. Buscar libro")
+    print("6. Salir")
+    opcion = int(input("Elige una opcion: "))
+    return opcion  
+#defino el main con los condicionales if para las opciones del menu#
+#y el while para que el menu se repita hasta que se elija la opcion salir#
+def main():
+    biblioteca = Biblioteca()
+    while True:
+        opcion = menu()
+        if opcion == 1:
+            biblioteca.agregar_libro()
+        elif opcion == 2:
+            biblioteca.prestar_libro()
+        elif opcion == 3:
+            biblioteca.devolver_libro()
+        elif opcion == 4:
+            biblioteca.mostrar_libros()
+        elif opcion == 5:
+            biblioteca.buscar_libro()
+        elif opcion == 6:
+            #si se elige la opcion salir se imprime un mensaje y se rompe el ciclo while#
+            print("Gracias por usar el sistema degestion que tenga un buen dia ")
+            break
+        #si digitalizan una opcion no contemplada se imprime el mensaje#
+        else:
+            print("Opcion no valida")           
+
+                    
+                   
