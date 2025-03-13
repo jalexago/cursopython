@@ -7,10 +7,24 @@ body {
 }
 
 header {
-    background-color: #0044cc;
+    background-color: #0b2457;
     color: white;
     padding: 1rem;
     text-align: center;
+}
+.container {
+    margin: 20px;
+}
+.section {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.section img {
+    max-width: 100%;
+    height: auto;
 }
 
 nav ul {
