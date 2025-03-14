@@ -12,6 +12,16 @@ header {
     padding: 1rem;
     text-align: center;
 }
+header img{
+    width: 100px;
+    height: 100px;
+    
+}
+header div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .container {
     margin: 20px;
 }
