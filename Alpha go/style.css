@@ -109,11 +109,11 @@ footer {
     background-color: #0044cc;
     color: white;
     text-align: right;
-    padding: 10px;
-    position: fixed;
+    padding: 1px;
+    position: flex;
     width: 100%;
     bottom: 0;
-    border-radius: 15px;
+    
 }
 
 form {
