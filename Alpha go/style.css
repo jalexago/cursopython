@@ -56,21 +56,21 @@ button:hover{
     margin: 30px;
     border-radius: 15px;
 }
-.servicios:first-child{
+.servicios:nth-child(2){
     background-image: linear-gradient(
         0deg,
         rgba(0,0,0,0.6),
         rgba(0,0,0,0.6)
     ), url("media/fondo.jpg");
 }
-.servicios:nth-child(2){
+.servicios:nth-child(3){
     background-image: linear-gradient(
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     ), url(media/impresion3d.jpg);
 }
-.servicios:nth-child(3){
+.servicios:nth-child(4){
     background-image: linear-gradient(
         0deg,
         rgba(0,0,0,0.5),
